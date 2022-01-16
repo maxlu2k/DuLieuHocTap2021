@@ -1,0 +1,21 @@
+body{
+    width: 1000px;
+    height: auto;
+}
+hr{
+  margin: 0%;
+}
+body .logo1{
+    width: 15rem;
+}
+body .box{
+    display: flex;
+    text-align: justify;
+}
+body .box p{
+    font-size: 1rem;
+    margin: 0%;
+}
+body .box .logo2{
+    width: 7rem;
+}

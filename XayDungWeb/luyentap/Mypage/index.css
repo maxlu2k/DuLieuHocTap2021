@@ -1,0 +1,59 @@
+body{
+    font-family: cursive;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width: 980px;
+    margin: 50px auto;
+}
+/* phan menu chinh */
+nav{
+    background-color: orange;
+    height: 27px;
+    text-align: center;
+}
+.main-menu{
+    display: inline-block;
+}
+.main-menu>li{
+    float: left;
+    padding: 4px 20px;
+}
+.main-menu a{
+    color: white;
+}
+.main-menu li{
+    position: relative;
+}
+.sub-menu li{
+    padding: 8px 20px;
+}
+.sub-menu{
+    position: absolute;
+    top: 5px;
+    left: 100%;
+    background-color: rgb(131, 15, 15);
+    width: 120px;
+    display: none;
+}
+.main-menu li:hover>.sub-menu{
+    display: block;
+}
+.main-menu>li>.sub-menu{
+    top: 27px;
+    left: 0;
+}
+.sub-menu li>.sub-menu{
+    background-color: red;
+}

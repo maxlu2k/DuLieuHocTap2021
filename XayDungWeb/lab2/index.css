@@ -1,0 +1,190 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 980px auto;
+    font-family: Tahoma;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 980px;
+    margin: 0 auto;
+}
+/* ----đăng nhập đăng kí--- */
+.login-top{
+    background-color: rgb(30, 0, 128);
+    position: absolute;
+    border-radius: 0px 0px 60px 0px;
+    z-index: 1;
+    height: 25px;
+}
+.login-top ul {
+    list-style-type: none;
+    display: inline-block;
+    
+}
+.login-top li{
+    float: left;
+    position: relative;
+    padding: 3px 16px;
+}
+.login-top a{
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    font-size: 13px;
+}
+/* -------------------- */
+.banner-1{
+    margin-top: -50px;
+}
+.text-shop{
+    margin: 300px 70px;
+    font-size: 45px;
+    z-index: 2;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 0px 16px white;
+}
+.text-shop2{
+    margin: 360px 115px;
+    font-size: 13px;
+    z-index: 2;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+}
+/* ----menu---- */
+nav{
+    background-color: rgb(30, 0, 128);
+    height: 27px;
+    text-align: left;
+    margin-top: -3px;
+}
+.main-menu{
+    display: inline-block;
+}
+.main-menu>li{
+    float: left;
+    padding: 4px 20px;
+}
+.main-menu a{
+    color: white;
+}
+.main-menu li{
+    position: relative;
+}
+.sub-menu li{
+    padding: 8px 20px;
+}
+.sub-menu{
+    position: absolute;
+    top: 5px;
+    left: 100%;
+    background-color: rgb(131, 15, 15);
+    width: 120px;
+    display: none;
+}
+.main-menu li:hover>.sub-menu{
+    display: block;
+}
+.main-menu li:hover{
+    background-color: rgb(250, 85, 20);
+    color: black;
+}
+.main-menu>li>.sub-menu{
+    top: 27px;
+    left: 0;
+}
+/* ---------------------- */
+
+.banner-2{
+    margin-top: 15px;
+}
+.text-kmai{
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(30, 0, 128);
+    margin: 0;
+}
+.box img{
+    width: 200px;
+    border-style: ridge;
+    padding: 40px 17px;
+}
+.box-mini{
+    background-color: white;
+    text-align: center;
+    float: left;
+    margin: 0px 43px 42px 43px;
+}
+.box span{
+    position: absolute;
+    font-size: 10px;
+    padding: 5px 10px;
+    text-decoration: line-through;
+}
+.box p{
+    font-weight: bold;
+    position: absolute;
+}
+.ten{
+    margin: 10px 45px;
+    margin: 21px 74px;
+}
+.sale{
+    margin: 248px 45px;
+    color: red;
+}
+.price{
+    color: black;
+}
+.text-kmai-3{
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(30, 0, 128);
+    margin: 0 ;
+}
+
+.box-2 img{
+    width: 450px;
+}
+.box-2{
+    border: 1px solid #333;
+    padding: 10px;
+    border-left: none;
+}
+.box-2-img{
+    width: 300px;
+    height: 150px;
+    float: left;
+}
+.box-2-text{
+    width: 490px;
+    height: 300px;
+    float: right;
+    font-weight: bold;
+}
+.box-2-text p{
+    margin: 0;
+    color: rgb(158, 3, 3);
+}
+.clear{
+    clear: both;
+}
+.footer{
+    background-color: rgb(30, 0, 128);
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 6px 0px;
+}

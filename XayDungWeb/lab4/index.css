@@ -1,0 +1,22 @@
+body{
+    font-family: Tahoma;
+}
+.container{
+    width: 980px;
+    height: 500px;
+    margin: 150px auto 0;
+    background-color: aqua;
+    text-align: center;
+}
+.con_left{
+    float: left;
+    width: 70%;
+    height: 500px;
+    background-color: brown;
+}
+.con_right{
+    float: right;
+    width: 30%;
+    height: 500px;
+    background-color: rgb(255, 73, 73);
+}

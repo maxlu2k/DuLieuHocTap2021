@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+}
+h2{
+    color: white;
+    text-shadow: 0 0 5px red;
+}
+p{
+    font-variant: small-caps;
+    font-size: 20px;
+    word-spacing:2px;
+    letter-spacing:1px;
+    line-height:25px;
+    
+}
+em span {
+    color: brown;
+}
+.em1{
+    color: red;
+}
+.em2{
+    color: blue;
+}
+.em3{
+    color: green;
+}
