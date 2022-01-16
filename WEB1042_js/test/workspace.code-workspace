@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\..\\dungndmph19187_test02"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

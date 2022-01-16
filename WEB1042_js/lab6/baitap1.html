@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        var out = new Image();
+        out.src = "img/Anh1.png"
+        var over = new Image();
+        over.src = "img/Anh3.gif"
+        function fover(){
+            var anh = document.getElementById('anh')
+            anh.src = over.src
+        }
+        function fout(){
+            var anh = document.getElementById('anh')
+            anh.src = out.src
+        }
+    </script>
+</head>
+<body>
+    tạo trang web và viết mã js đ .khiển hành
+
+    <img id="anh" onmouseover="fover()" onmouseout="fout()" src="img/Anh1.png">
+</body>
+</html>

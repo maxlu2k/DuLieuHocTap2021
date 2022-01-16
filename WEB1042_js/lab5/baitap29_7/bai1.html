@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    Số hạng 1:<input type="text" name="" id="soHang1"><br>
+    Số hạng 2:<input type="text" name="" id="soHang2"><br>
+    <div id="ketQua">Hiển thị kết quả</div>
+
+    <button id="tinhTong" onclick="tinhTong()">Tính Tổng</button>
+</body>
+<script>
+    function tinhTong() {
+        var soHang1 = document.getElementById('soHang1').value;
+        var soHang2 = document.getElementById('soHang2').value;
+        var kq = soHang1 + soHang2;
+        document.querySelector('#ketQua').innerHTML = kq;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+            display: block;
+            padding: 5px 0px;
+        }
+    </style>
+    <script>
+        // Lấy giá trị của một input
+        function getValue(id) {
+            return document.getElementById(id).value.trim();
+        }
+
+        // Hiển thị lỗi
+        function showError(key, mess) {
+            document.getElementById(key + '_error').innerHTML = mess;
+        }
+
+        function validate() {
+            var flag = true;
+
+            // 1 username
+            var username = getValue('username');
+            if (username == '' || username.length < 5 || !/^[a-zA-Z0-9]+$/.test(username)) {
+                flag = false;
+                showError('username', 'Vui lòng kiểm tra lại Username');
+            }
+
+            // 2. password
+            var password = getValue('password');
+            var repassword = getValue('repassword');
+            if (password == '' || password.length < 8 || password != repassword) {
+                flag = false;
+                showError('password', 'Vui lòng kiểm tra lại Password');
+            }
+
+            // 3. Phone
+            var phone = getValue('phone');
+            if (phone != '' && !/^[0-9]{10}$/.test(phone)) {
+                flag = false;
+                showError('phone', 'Vui lòng kiểm tra lại Phone');
+            }
+
+            // 4. Email
+            var email = getValue('email');
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (!mailformat.test(email)) {
+                flag = false;
+
+                showError('phone', 'Vui lòng kiểm tra lại Email');
+            }
+
+            return flag;
+            function ValidateEmail(mail) {
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value)) {
+                    return (true)
+                }
+                alert("You have entered an invalid email address!")
+                return (false)
+            }
+        }
+    </script>
+</head>
+
+<body style="margin: 50px;">
+    <form method="post" action="" id="loginform">
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>Email </td>
+                <td>
+                    <input type="text" id="email" name="email" value="" />
+                    <span id="email_error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone: </td>
+                <td>
+                    <input type="text" id="phone" name="phone" value="" />
+                    <span id="phone_error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>SCMND </td>
+                <td>
+                    <input type="text" id="address" name="address" value="" />
+                    <span id="address_error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" onclick="return validate();" id="btn" name="btn" value="Đăng ký" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

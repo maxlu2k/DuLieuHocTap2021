@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/tuyendung.css">
+
+    <title>Tuyển dụng</title>
+</head>
+
+<body>
+    <header>
+        <div class="login-top">
+            <ul>
+                <li><a href="login.html">Đăng nhập</a></li>
+                <li><a href="">Đăng ký</a></li>
+                <li><a href="">Quên mật khẩu</a></li>
+            </ul>
+        </div>
+        <p class="text-shop">Shop Online</p>
+        <p class="text-shop2">Now you can buy online! Any time, Any where...</p>
+        <!-- banner -->
+        <img class="banner-1" src="./img/bannertop.png" alt="">
+        <a href="index.html">
+            <div id="invi"></div>
+        </a>
+
+    </header>
+
+    <!-- <div> menu scroll -->
+
+    <div id="mm">
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html">Điện thoại</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Iphone</a></li>
+                        <li><a href="#">Samsung</a></li>
+                        <li><a href="#">Oppo</a></li>
+                    </ul>
+                </li>
+                <li><a href="banhang.html">Bán hàng</a></li>
+                <li><a href="tuyendung.html">Đăng ký</a></li>
+                <li><a href="login.html">Đăng nhập</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <form onsubmit="return ktra()">
+                <h2>Đăng kí thành viên</h2>
+                <div class="std"><b>Đăng ký</b></div>
+                <br>
+                <p><label for="">Mã sinh viên</label>
+                    <input type="text" name="code" id="code" placeholder="Nhập vị trí tuyển dụng" >required
+                </p>
+                <br>
+                <p><label for="">Họ và tên</label>
+                    <input type="text" name="user" id="user" placeholder="Nhập Tên" >required
+                </p>
+                <br>
+                <p><label for="">Tuổi</label>
+                    <input type="text" name="age" id="age" placeholder="Nhập tuổi">
+                </p>
+                <br>
+                <p><label for="">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Nhập email" >required
+                </p>
+                <br>
+                <p><label for="">Giới tính</label>
+                <fieldset class="fie">
+                    <input type="radio" name="checkbox" value="" checked="checked" /><span>Nam</span>
+                    <input type="radio" name="checkbox" value="" /><span>Nữ</span>
+                </fieldset>
+                </p>
+                <br>
+
+                <p><label for="">Sở thích</label>
+                <fieldset class="fie">
+                    <input type="checkbox" name="" id=""> <span>Đoc sách</span>
+                    <input type="checkbox" name="" id=""> <span>Du lịch</span>
+                    <input type="checkbox" name="" id=""><span>Âm nhạc</span>
+                    <input type="checkbox" name="" id=""><span>Ẩm thực</span>
+                    <input type="checkbox" name="" id=""><span>Khác</span>
+
+
+                </fieldset>
+                </p>
+                <br>
+                <p><label for="">Ngày sinh</label>
+                    <input type="date" name="" id="">
+                </p>
+                <br>
+
+                <br>
+                <p><label for="">Ghi chú</label>
+                    <br>
+                    <textarea name="" id="area" cols="30" rows="10" style="margin: 0px; height: 234px; width:  693px;"
+                        placeholder="Giới thiệu về bản thân" ></textarea>required
+                </p>
+
+                <div class="btn">
+                    <button type="submit">Add</button>
+                    <button type="reset"> Reset form</button>
+                </div>
+
+            </form>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <footer>
+            Nguyễn Đình Mạnh Dũng
+        </footer>
+    </div>
+    <script>
+        //form
+        function ktra() {
+            var check = 1;
+            var code = document.getElementById("code");
+            if (code.value.length == 0) {
+                
+                alert("mã không để trống");
+                check = 0;
+            } else {
+                code.style.backgroundColor = "none"
+                check = 1;
+            }
+            // ----------------user
+            var user = document.getElementById("user");
+            if (user.value.length == 0) {
+                alert("Tên đăng nhập không để trống");
+                check = 0;
+            } else {
+                check = 1;
+            }
+            //-----------------email
+            var email = document.getElementById("email");
+            var re = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");
+            if (email.value.length == 0) {
+                alert("email không để trống");
+                check = 0;
+            } else if (!re.test(email.value)) {
+                alert("phải có @ và .");
+                check = 0;
+            } else {
+                check = 1;
+            }
+            //-----------area
+            var area = document.getElementById("area");
+            if (area.value.length == 0) {
+                alert("area không để trống");
+                check = 0;
+            } else if (area.value.length < 200) {
+                alert("ghi chú trên 200 kí tự");
+                check = 0;
+            } else {
+                check = 1;
+            }
+            if (check == 0) { return false; }
+            else { return true; }
+        }
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>

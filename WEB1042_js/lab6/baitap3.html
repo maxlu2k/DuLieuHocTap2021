@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hth(visible){
+            var phivc = document.getElementById("phivc");
+            phivc.style.display = visible?"":"none";//thay thế cho if (toán tử 3 ngôi)
+        }
+        //kiểm tra
+        function ktra(){
+            //kiểm tra tên sp
+            var sp = document.getElementById('sp');
+            if(sp.value.length == 0){
+                alert('Vui lòng nhập lại');
+                return false;
+            }
+            //kiểm tra đơn giá
+            var dg = document.getElementById('dg');
+            if(isNaN(dg.value.length == 0)){
+                alert('vui lòng nhập lại');
+                return false;
+            }else if(parseFloat(dg.value)<=0){
+                alert('vui lòng nhập số nguyên dương')
+                return false;
+            }
+            //ktra loại sp
+            var loai = document.getElementById('loai');
+            if(loai.value.length==0){
+                alert('vui lòng nhập lại!!');
+                return false;
+            }
+            //ktra địa chỉ
+            var radio = document.getElementsByName('dchi');
+            if(!radio[0].checked && !radio[1].checked){
+                alert('vui lòng chọn nơi nhận hàng');
+                return false;
+            }
+            alert('chúc mừng bạn đã nhập thành công');
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Mặt hàng</h2>
+    <form onsubmit="return ktra()">
+    <p>
+        <label>Sản phẩm</label>
+        <input id="sp">
+    </p>
+    <p>
+        <label>Loại</label>
+        <select name="" id="loai">
+            <option value=""></option>
+            <option value="dt">Điện thoại</option>
+            <option value="mt">Máy tính</option>
+        </select>
+    </p>
+    <p>
+        <label>Đơn giản</label>
+        <input id="dg">
+    </p>
+    <p>
+        <label>Nơi nhận hàng</label>
+        <input type="radio" name="dchi" onclick="hth(true)">Nội thành
+        <input type="radio" name="dchi" onclick="hth(true)">Ngoại thành
+        
+    </p>
+    <p id="phivc" style="display: none;">
+       <label for="">phí vận chuyển</label>
+       <input value="10000" readonly>
+    </p>
+    <hr>
+    <button type="submit">Đặt mua</button>
+    </form>
+</body>
+
+</html>

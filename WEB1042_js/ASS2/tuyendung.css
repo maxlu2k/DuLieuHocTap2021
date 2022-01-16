@@ -1,0 +1,77 @@
+body{
+    background-color: white;
+    background-size: cover;
+    font-family: Tahoma;
+}
+body button{
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 1px;
+
+}
+form{
+    /* background-color: antiquewhite; */
+    background-color: white;
+    margin: 150px auto 150px;
+    width: 700px;
+}
+.std{
+    background-color: rgb(30, 0, 128);;
+    width: 99%;
+    padding: 4px;
+    color: azure;
+    border-bottom-style: dashed;
+}
+form>h2{
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    padding:0;
+}
+form label{
+    padding: 0 6px;
+    font-weight: bold;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 7px 0;
+}
+form>p{
+    margin: 0;
+}
+textarea{
+    border-radius: 10px;
+}
+input[type=text],
+input[type=date],
+input[type=email]{
+    width: 98%;
+}
+.btn{
+    text-align: right;
+    margin: 9px;
+}
+
+/* ------------- */
+
+body button:hover{
+    background-color: #e4e4e4;
+}
+
+
+/* --------------------- */
+input[type=text]:focus,
+input[type=date]:focus,
+input[type=email]:focus,
+textarea:focus{
+    outline-color: #ffb29b;
+    color: azure;
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    animation:slidebg 5s linear infinite;
+}
+
+@keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100% auto;
+        }
+
+        #content {
+            width: 980px;
+            margin: 0 auto;
+
+        }
+
+        img {
+            width: 400px;
+            height: 300px;
+            margin: auto 18em;
+        }
+
+        button {
+            margin: auto 16.5em;
+            padding: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            margin: 0px 20em;
+        }
+
+        input[type=text],
+        input[type=date],
+        input[type=email],
+        input[type=password] {
+            width: 45%;
+            height: 17px;
+        }
+    </style>
+    <script>
+
+        var img = [];
+        var timer;
+        timer = setTimeout("play()", 1500);
+        for (var i = 1; i < 5; i++) {
+            img[i] = new Image();
+            img[i].src = "img/Anh" + i + ".jpg"
+        }
+        var index = 1
+        function next() {
+            index++;
+            if (index >= img.length) {
+                index = 1
+            }
+            var anh = document.getElementById("anh")
+            anh.src = img[index].src;
+        }
+        function prev() {
+            index--;
+            if (index < 1) {
+                index = img.length - 1
+            }
+            var anh = document.getElementById('anh')
+            anh.src = img[index].src;
+        }
+        function play() {
+            index++;
+            if (index >= img.length) {
+                index = 1
+            } 
+            var anh = document.getElementById("anh")
+            anh.src = img[index].src;
+            timer = setTimeout("play()", 1500);
+        }
+        function stop() {
+            clearTimeout(timer);
+        }
+
+         //--------------
+        function getValue(id) {
+            return document.getElementById(id).value.trim();
+        }
+
+        function validate() {
+            var vl = true;
+
+            if (hoTen === '') {
+                hthiLoi(hoTen, 'Không được để trống ô này');
+            } else {
+                hthiLoi(hoTen);
+            }
+
+
+        }
+        function hthiLoi(key, message) {
+            document.getElementById(key + '_error').innerHTML = message;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <img src="img/Anh1.jpg" alt="" id="anh">
+        <div>
+            <button onclick="prev()">prev</button>
+            <button onclick="next()">next</button>
+            <button onclick="play()">play</button>
+            <button onclick="stop()">stop</button>
+        </div>
+        <hr>
+        <!-- -------------------------- -->
+
+        <form method="post" action="">
+            <h2>Đăng ký thành viên</h2>
+            <p><label for="">Họ tên:</label>
+                <input type="text" id="hoten">
+            </p>
+            <p><label for="">Email:</label>
+                <input type="email" id="email">
+            </p>
+            <p><label for="">Số điện thoại:</label>
+                <input type="text" id="phone">
+            </p>
+            <p><label for="">User:</label>
+                <input type="text" id="user">
+            </p>
+            <p><label for="">Pass:</label>
+                <input type="password" id="pass">
+            </p>
+            <p><label for="">Repass:</label>
+                <input type="password" id="pass">
+            </p>
+
+            <input type="submit" onclick="validate();" id="btn" />
+        </form>
+    </div>
+</body>
+
+</html>

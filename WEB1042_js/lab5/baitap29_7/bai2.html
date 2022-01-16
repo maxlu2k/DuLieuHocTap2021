@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Đồng hồ đếm ngược bằng JS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        span {
+            border: solid 1px #d2f67c;
+            padding: 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <strong>
+            Nhập thời gian ban đầu đếm ngược: <br />
+        </strong>
+        <input type="text" id="g" placeholder="Giờ" value="" /> <br />
+        <input type="text" id="p" placeholder="Phút" value="" /> <br />
+        <input type="text" id="gi" placeholder="Giây" value="" /><br><br>
+        <input type="button" value="Start" onclick="start()" />
+        <input type="button" value="Stop" onclick="stop()" /> <br /> <br />
+    </div>
+    <div>
+        <span id="gio">Giờ</span> :
+        <span id="phut">Phút</span> :
+        <span id="giay">Giây</span>
+    </div>
+</body>
+<script>
+    var gio = null;
+    var phut = null;
+    var giay = null;
+    var timeout = null;
+
+    function start() {
+        if (gio === null) {
+            gio = parseInt(document.getElementById('g').value);
+            phut = parseInt(document.getElementById('p').value);
+            giay = parseInt(document.getElementById('gi').value);
+        }
+
+        if (giay === -1) {
+            phut -= 1;
+            giay = 59;
+        }
+
+        if (phut === -1) {
+            gio -= 1;
+            phut = 59;
+        }
+        if (gio == -1) {
+            clearTimeout(timeout);
+            alert('Hết giờ');
+            return false;
+        }
+
+        document.getElementById('gio').innerText = gio.toString();
+        document.getElementById('phut').innerText = phut.toString();
+        document.getElementById('giay').innerText = giay.toString();
+
+        timeout = setTimeout(function () {
+            giay--;
+            start();
+        }, 1000);
+    }
+
+    function stop() {
+        clearTimeout(timeout);
+    }
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ran = Math.round(100 * Math.random())
+        while(true)
+        {
+            //thực hiện mỗi lần lặp
+            var so = prompt('nhập số = ')
+            if(ran == so){
+                alert('chúc mừng bạn đã đoán đúng')
+                document.write('Ran = '+ran)
+                document.write('Số = '+so)
+                break;
+            }else if(ran > so){
+                alert('Số ngẫu nhiên lớn hơn giá trị nhập vào')
+                document.write('Ran = '+ran)
+                document.write('Số = '+so)
+        
+            }else{
+                alert('Số ngẫu nhiên nhỏ hơn giá trị nhập vào')
+                document.write('Ran = '+ran)
+                document.write('Số = '+so)
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

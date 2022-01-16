@@ -1,0 +1,98 @@
+
+body{
+    background-image: url(../img/blackCat.jpg);
+    background-size: cover;
+    font-family: Tahoma;
+}
+form{
+    background-color: aliceblue;
+    opacity: 0.7;
+    margin: 150px auto 0;
+    width: 300px;
+    padding: 10px;
+}
+form>h2{
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    padding:0;
+
+    font-size: calc(10px + 2em);
+    white-space: nowrap;
+
+    /* background: linear-gradient( 92deg, #95d7e3, #eb76ff ); */
+    
+    background: -webkit-linear-gradient( 92deg, #95d7e3, #eb76ff );
+    background-size:100px 100px;
+    
+    -webkit-background-clip: text;
+    
+    -webkit-text-fill-color: transparent;
+    animation: textAnimate 5s linear infinite alternate;
+
+}
+input[type=text],
+input[type=password]{
+    width: 95%;
+    padding: 5px 7px;
+}
+form>a{
+    text-decoration: none;
+    font-size: 12px;
+}
+button {
+    background-color: aqua;
+    padding: 4px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 4px;
+}
+button:hover{
+    cursor: pointer;
+    background-image:     linear-gradient(
+      to right, 
+      #E7484F,
+      #E7484F 16.65%,
+      #F68B1D 16.65%,
+      #F68B1D 33.3%,
+      #FCED00 33.3%,
+      #FCED00 49.95%,
+      #009E4F 49.95%,
+      #009E4F 66.6%,
+      #00AAC3 66.6%,
+      #00AAC3 83.25%,
+      #732982 83.25%,
+      #732982 100%,
+      #E7484F 100% 
+    );
+  animation:slidebg 5s linear infinite;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+    outline-color: aliceblue;
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    animation:slidebg 5s linear infinite;
+}
+
+
+/*-----*/
+@keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }
+@keyframes textAnimate {
+    from {
+      filter: hue-rotate(0deg);
+      background-position-x: 0%;
+      
+    }
+    to {
+      filter: hue-rotate(360deg);
+      background-position-x: 600vw;
+      
+    }
+  }

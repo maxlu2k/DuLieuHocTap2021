@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a {
+            display: inline-block;
+            width: 120px;
+        }
+
+        button {
+            margin-left: 120px;
+        }
+
+        input {
+            margin: 5px 0;
+        }
+
+        span {
+            margin-left: 10px;
+        }
+        
+    </style>
+    <script>
+        function ktra() {
+            var name = document.getElementById("name");
+            var check = 1;
+            if (name.value.length == 0) {
+                console.log("name sai");
+                document.getElementById("tbname").innerHTML = "hay nhap vao day";
+                document.getElementById("anh1").src="Anh/uncheck.png";
+                check = 0;
+            } else {
+                document.getElementById("tbname").innerHTML = "";
+                document.getElementById("anh1").src="Anh/check.png";
+                check=1;
+            }
+            // ----------------
+            var email = document.getElementById("email");
+            var re = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");
+            if (email.value.length == 0) {
+                console.log("email sai");
+                document.getElementById("tbemail").innerHTML = "hay nhap vao day";
+                document.getElementById("anh2").src="Anh/uncheck.png";
+                check = 0;
+            } else if (!re.test(email.value)) {
+                console.log("email sai");
+                document.getElementById("tbemail").innerHTML = "email nhap khong hop le";
+                document.getElementById("anh2").src="Anh/uncheck.png";
+                check = 0;
+            } else {
+                document.getElementById("tbemail").innerHTML = "";
+                document.getElementById("anh2").src="Anh/check.png";
+                check=1;
+            }
+            // ----------------sdt
+            var sdt = document.getElementById("sdt");
+            if (sdt.value.length == 0) {
+                console.log("sdt sai");
+                document.getElementById("tbsdt").innerHTML = "hay nhap vao day";
+                document.getElementById("anh3").src="Anh/uncheck.png";
+                check = 0;
+            } else if (sdt.value.substring(0,1)!="0"){
+                console.log("sdt sai");
+                document.getElementById("tbsdt").innerHTML = "nhap sai dinh dang sdt";
+                document.getElementById("anh3").src="Anh/uncheck.png";
+                check = 0;
+            }else {
+                document.getElementById("tbsdt").innerHTML = "";
+                document.getElementById("anh3").src="Anh/check.png";
+                check = 1;
+            }
+            // ----------------user
+            var user = document.getElementById("user");
+            if (user.value.length == 0) {
+                console.log("user sai");
+                document.getElementById("tbuser").innerHTML = "hay nhap vao day";
+                document.getElementById("anh4").src="Anh/uncheck.png";
+                check = 0;
+            } else if(user.value.length < 8){
+                console.log("user sai");
+                document.getElementById("tbuser").innerHTML = "nhap du 8 ki tu";
+                document.getElementById("anh4").src="Anh/uncheck.png";
+                check = 0;
+            }else{
+                document.getElementById("tbuser").innerHTML = "";
+                document.getElementById("anh4").src="Anh/check.png";
+                check = 1;
+            }
+            // ----------------pass
+            var pass1 = document.getElementById("pass1");
+            var pass2 = document.getElementById("pass2");
+            if (pass1.value.length == 0) {
+                console.log("pass1 sai");
+                document.getElementById("tbpass1").innerHTML = "hay nhap vao day";
+                document.getElementById("anh5").src="Anh/uncheck.png";
+                check = 0;
+            } else if (pass1.value.length < 8) {
+                console.log("pass1 ngan");
+                document.getElementById("tbpass1").innerHTML = "password phai du 8 ki tu";
+                document.getElementById("anh5").src="Anh/uncheck.png";
+                check = 0;
+            } else {
+                document.getElementById("tbpass1").innerHTML = "";
+                document.getElementById("anh5").src="Anh/check.png";
+            }
+            if (pass2.value.length == 0) {
+                console.log("pass2 sai");
+                document.getElementById("tbpass2").innerHTML = "hay nhap vao day";
+                document.getElementById("anh6").src="Anh/uncheck.png";
+                check = 0;
+            } else if (pass1.value != pass2.value) {
+                console.log("pass2 sai");
+                document.getElementById("tbpass2").innerHTML = "nhap sai password";
+                document.getElementById("anh6").src="Anh/uncheck.png";
+                check = 0;
+            } else {
+                document.getElementById("tbpass2").innerHTML = "";
+                document.getElementById("anh6").src="Anh/check.png";
+            }
+            if (check == 0) { return false; }
+            else { return true; }
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return ktra()">
+        <span id="a">ho ten</span><input type="text" id="name"> <img src="" id="anh1"><span id="tbname"></span><br>
+        <span id="a">Email</span><input type="text" id="email"> <img src="" id="anh2"><span id="tbemail"></span><br>
+        <span id="a">sdt</span><input type="text" id="sdt"> <img src="" id="anh3"><span id=tbsdt></span><br>
+        <span id="a">user</span><input type="text" id="user"> <img src="" id="anh4"><span id="tbuser"></span><br>
+        <span id="a">password</span><input type="password" id="pass1"> <img src="" id="anh5"><span id=tbpass1></span><br>
+        <span id="a">repassword</span><input type="password" id="pass2"> <img src="" id="anh6"><span
+            id="tbpass2"></span><br>
+        <span id="a">ban biet chung toi</span><input type="radio" name="know">ban gioi thieu <input type="radio"
+            name="know">qua fb<br>
+        <button type="submit">dang ki</button>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="baitap2.js"></script>
+</head>
+
+<body>
+    <h3>DANH MỤC HÀNG HÓA</h3>
+    <table border="1">
+        <tr>
+            <th>masp</th>
+            <th>TenSP</th>
+            <th>DonGia</th>
+            <th >Nút</th>
+        </tr>
+            <td>sp01</td>
+            <th>Iphone 9</td>
+            <td>150000</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+        </tr>
+            <td>sp02</td>
+            <th>SamSung</td>
+            <td>700000</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+    </table>
+    <h3>Danh Mục Bán Hàng</h3>
+    <h3 id="empty">Bạn chưa chọn mặt hàng nào</h3>
+    <div id="not-empty" style="display: none;">
+        <table border="1" id="cart"></table>
+    </div>
+</body>
+
+</html>

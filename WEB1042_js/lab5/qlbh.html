@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <style>
+        tr {
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bold;
+        }
+        .bang{
+            margin-left: 300px;
+            text-align: center;
+        }
+        select{
+            margin-left: 300px;
+            text-align: center;
+            width: 400px;
+        }
+    </style>
+    <script>
+        function hthi1(){
+             var ip9 = document.getElementById('ip9')
+             var ttip9 = 700 * ip9.value
+             document.getElementById('ttip9').innerText =+ ttip9
+        }
+        function hthi2(){
+             var ss = document.getElementById('ss')
+             var ttss = 400 * ss.value
+             document.getElementById('ttss').innerText =+ ttss
+        }
+        function hthi3(){
+             var bk = document.getElementById('nk')
+             var ttnk = 100 * nk.value
+             document.getElementById('ttnk').innerText =+ ttnk
+        }
+        function hthi4(){
+             var sn = document.getElementById('sn')
+             var ttsn = 450 * sn.value
+             document.getElementById('ttsn').innerText =+ ttsn
+        }
+        function hthi5(){
+             var mt = document.getElementById('mt')
+             var ttmt = 180 * mt.value
+             document.getElementById('ttmt').innerText =+ ttmt
+        }
+        function hthi6(){
+             var op = document.getElementById('op')
+             var ttop = 600 * op.value
+             document.getElementById('ttop').innerText =+ ttop
+        }
+        function hthi7(){
+             var bp = document.getElementById('bp')
+             var ttbp = 90 * bp.value
+             document.getElementById('ttbp').innerText =+ ttbp
+        }
+        function tongtt(){
+            var ip9 = document.getElementById('ip9').value
+            var ss = document.getElementById('ss').value
+            var nk = document.getElementById('nk').value
+            var sn = document.getElementById('sn').value
+            var mt = document.getElementById('mt').value
+            var op = document.getElementById('op').value
+            var bp = document.getElementById('bp').value
+            var tongtt = 700 * ip9 + 400 * ss + 100 * nk + 450 * sn + 180 * mt +600 * op + 90 * bp 
+            document.getElementById('tongtt').innerText =+tongtt
+        }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <select name="" id="gia" class="price">
+        <option value="0">mức giá</option>
+        <option value="1">0 đến 400</option>
+        <option value="2">450 đên 700 </option>
+    </select>
+    <hr>
+    <div class="bang">
+        <table border="1px" id="sp" onclick="tongtien()">
+            <tr>
+                <td><input type="checkbox" id="checkbox" onclick="hthi()"></td>
+                <td>Hàng hóa</td>
+                <td>Đơn giá</td>
+                <td>Số lượng</td>
+                <td>Thành tiền</td>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hthi1()"></td>
+                <td>Iphone 9</td>
+                <td>700</td>
+                <td><input type="number" id="ip9"></td>
+                <td id="ttip9"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hthi2()"></td>
+                <td>Samsung</td>
+                <td>400</td>
+                <td><input type="number" id="ss"></td>
+                <td id="ttss"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hthi3()"></td>
+                <td>Nokia</td>
+                <td>100</td>
+                <td><input type="number" id="nk"></td>
+                <td id="ttnk"></td>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hthi4()"></td>
+                <td>Sony</td>
+                <td>450</td>
+                <td><input type="number" id="sn"></td>
+                <td id="ttsn"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hthi5()"></td>
+                <td>Motorola</td>
+                <td>180</td>
+                <td><input type="number" id="mt"></td>
+                <td id="ttmt"></td>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hthi6()"></td>
+                <td>Oppo</td>
+                <td>600</td>
+                <td><input type="number" id="op"></td>
+                <td id="ttop"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hthi7()"></td>
+                <td>Bphone</td>
+                <td>90</td>
+                <td><input type="number" id="bp"></td>
+                <td id="ttbp"></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center;">Tổng</td>
+                <td id="tongtt" onclick="tongtt()"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

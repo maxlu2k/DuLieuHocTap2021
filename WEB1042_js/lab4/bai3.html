@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var wd;
+        function mo() {
+            wd = window.open('https://www.google.com/')
+
+        }
+        function dong() {
+            if (wd.closed == false) wd.close();
+        }
+        function kt() {
+            if (wd.closed == false)
+                alert('cửa sổ đang mở')
+            else
+                alert('cửa sổ đã được  đóng')
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+<button id="but1" value="open" onclick="mo()">Mở cửa sổ mới</button>
+<button id="but2" value="close" onclick="dong()">Đóng cửa sổ mới</button>
+<button id="but3" value="check" onclick="kt()">Kiểm tra cửa sổ đẫ đóng chưa</button>
+
+</html>

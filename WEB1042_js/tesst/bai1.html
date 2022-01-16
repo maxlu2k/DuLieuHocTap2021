@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            margin-right: 100px;
+            margin-left: 35px;
+            background-color: rgb(55, 55, 232);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="Anh/0.JPG" id="anh" alt=""> <br>
+    <button onclick="previous()">Previous</button>
+    <button onclick="next()">Next</button>
+    <script>
+        var images = [];
+        for(var i = 0;i<6;i++){
+            images[i] = new Image();
+            images[i].src="Anh/" + i + ".JPG"
+        }
+        var index = 0
+        function next(){
+            index++;
+            if(index >= images.length){
+            index = 0
+        }
+         var anh = document.getElementById('anh');
+         anh.src = images[index].src 
+    }
+    function previous(){
+        index--
+        if(index<0){
+            index = images.length - 1
+        }
+        var anh = document.getElementById('anh');
+         anh.src = images[index].src 
+    }
+    setInterval(next,1500);
+    </script>
+</body>
+</html>

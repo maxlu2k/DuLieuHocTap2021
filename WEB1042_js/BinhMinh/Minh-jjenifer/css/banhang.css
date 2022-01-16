@@ -1,0 +1,172 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100% auto;
+    font-family: Tahoma;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 460px;
+    height: 20em;
+    margin: 9em auto 30em auto;
+}
+/* ----đăng nhập đăng kí--- */
+.login-top{
+    background-color: rgb(30, 0, 128);
+    position: absolute;
+    border-radius: 0px 0px 60px 0px;
+    z-index: 4;
+    height: 25px;
+}
+.login-top ul {
+    list-style-type: none;
+    display: inline-block;
+    
+}
+.login-top li{
+    float: left;
+    position: relative;
+    padding: 3px 16px;
+}
+.login-top a{
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    font-size: 13px;
+}
+h2{
+    text-align: center;
+}
+/* ----------------------------- */
+/* tr {
+    text-align: center;
+}
+
+body {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.bang {
+    margin-left: 300px;
+    text-align: center;
+} */
+/* -------------------- */
+.banner-1{
+    margin-top: -50px;
+}
+.text-shop{
+    margin: 3em 42%;
+    font-size: 45px;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    z-index: 4;
+    text-shadow: 0px 0px 16px white;
+}
+.text-shop2{
+    margin: 16em 0em 0em 65em;
+    font-size: 13px;
+    position: absolute;
+    color: white;
+    z-index: 4;
+    font-weight: bold;
+}
+/* ----menu---- */
+nav{
+    background-color: rgb(30, 0, 128);
+    height: 38px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+.main-menu{
+    display: inline-block;
+}
+.main-menu>li{
+    float: left;
+    padding: 10px 31px;
+}
+.main-menu a{
+    color: white;
+}
+.main-menu li{
+    position: relative;
+}
+.sub-menu li{
+    padding: 8px 20px;
+}
+.sub-menu{
+    position: absolute;
+    top: 5px;
+    left: 100%;
+    background-color: rgb(131, 15, 15);
+    width: 138px;
+    display: none;
+}
+.main-menu li:hover>.sub-menu{
+    display: block;
+}
+.main-menu li:hover{
+    background-color: rgb(250, 85, 20);
+    color: black;
+}
+.main-menu>li>.sub-menu{
+    top: 37px;
+    left: 0;
+}
+/* ---------------------- */
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+/* ---------------- */
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+.active {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2.5s;
+  animation-name: fade;
+  animation-duration:3s;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 980px) {
+  .text {font-size: 11px}
+}
+
+.clear{
+    clear: both;
+}
+footer{
+    background-color: rgb(30, 0, 128);
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px 0px;
+}

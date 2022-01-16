@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai1</title>
+    <script>
+        var nv = new Object();
+        nv.manv = prompt('nhập mã nhân viên:')
+        nv.hoten = prompt('Nhập họ và tên:')
+        var luong = parseInt(prompt('Nhập số lương:'))
+        var thuong = parseInt(prompt('Nhập số thưởng:'))
+        var thuNhap = (luong + thuong)
+        nv.hienthi = function () {
+            document.write('<h3>Mã nhân viên: ' + this.manv + '</h3>')
+            document.write('<h3>Họ và tên: ' + this.hoten + '</h3>')
+            document.write('<h3>Số lương: ' + luong + '</h3>')
+            document.write('<h3>Thưởng thiêm: ' + thuong + '</h3>')
+            document.write('<h3>Tổng thu nhập: ' + thuNhap + '</h3>')
+
+            nv.thue;
+            if (thuNhap >= 9000000) this.thue = 'không đóng thuế'
+            else if (thuNhap <= 150000000) this.thue = 'thuế 10%'
+            else this.thue = 'thuế 15%'
+            document.write('<h3>Thuế: ' + this.thue + '</h3>')
+        }
+        document.getElementById("all").innerHTML = nv.hienthi()
+    </script>
+</head>
+
+<body>
+    <p id="all"></p>
+</body>
+
+</html>

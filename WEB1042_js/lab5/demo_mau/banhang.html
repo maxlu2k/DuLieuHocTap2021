@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <style>
+        tr {
+            text-align: center;
+        }
+        
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .bang {
+            margin-left: 300px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function hienthi1() {
+            var ip9 = document.getElementById('ip9');
+            var ttip9 = 700 * ip9.value;
+            document.getElementById('ttip9').innerText = +ttip9;
+        }
+
+        function hienthi2() {
+            var samsung = document.getElementById('samsung');
+            var ttsamsung = 400 * samsung.value;
+            document.getElementById('ttsamsung').innerText = +ttsamsung;
+        }
+
+        function hienthi3() {
+            var nokia = document.getElementById('nokia');
+            var ttnokia = 100 * nokia.value;
+            document.getElementById('ttnokia').innerText = +ttnokia;
+        }
+
+        function hienthi4() {
+            var sony = document.getElementById('sony');
+            var ttsony = 450 * sony.value;
+            document.getElementById('ttsony').innerText = +ttsony;
+        }
+
+        function hienthi5() {
+            var motorola = document.getElementById('motorola');
+            var ttmotorola = 180 * motorola.value;
+            document.getElementById('ttmotorola').innerText = +ttmotorola;
+        }
+
+        function tongtien() {
+            var ip9 = document.getElementById('ip9').value;
+            var samsung = document.getElementById('samsung').value;
+            var nokia = document.getElementById('nokia').value;
+            var sony = document.getElementById('sony').value;
+            var motorola = document.getElementById('motorola').value;
+            var thanhtien = 700 * ip9 + 400 * samsung + 100 * nokia + 450 * sony +
+                motorola * 180;
+            document.getElementById('tongtien').innerText = +thanhtien;
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#gia').change(function() {
+                var val = $(this).val();
+                $('#sp tr').each(function(index, tr) {
+                    var price = $(tr).find('td:eq(2)').text();
+                    if (val == 0) {
+                        $('tr').show();
+                    } else if (val == 1 && price <= 400) {
+                        $('.muc1').show();
+                        $('.muc2').hide();
+                    } else if (val == 2 && price >= 450 && price <= 700) {
+                        $('.muc1').hide();
+                        $('.muc2').show();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>BÁN HÀNG</h2>
+    <select name="" id="gia" class="price">
+        <option value="0">Mức giá</option>
+        <option value="1">0>>400</option>
+        <option value="2">450>>700</option>
+    </select>
+    <hr>
+    <div class="bang">
+        <table border="1px" id="sp" onclick="tongtien()">
+            <tr>
+                <td><input type="checkbox" id="checkbox" onclick="hienthi()"></td>
+                <td>Hàng hóa</td>
+                <td>Đơn giá</td>
+                <td>Số lượng</td>
+                <td>Thành tiền</td>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi1()"></td>
+                <td>Iphone 9</td>
+                <td>700</td>
+                <td><input type="number" id="ip9"></td>
+                <td id="ttip9"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi2()"></td>
+                <td>Samsung</td>
+                <td>400</td>
+                <td><input type="number" id="samsung"></td>
+                <td id="ttsamsung"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi3()"></td>
+                <td>Nokia</td>
+                <td>100</td>
+                <td><input type="number" id="nokia"></td>
+                <td id="ttnokia"></td>
+            </tr>
+            <tr class="muc2">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi4()"></td>
+                <td>Sony</td>
+                <td>450</td>
+                <td><input type="number" id="sony"></td>
+                <td id="ttsony"></td>
+            </tr>
+            <tr class="muc1">
+                <td><input type="checkbox" id="checkbox" onclick="hienthi5()"></td>
+                <td>Motorola</td>
+                <td>180</td>
+                <td><input type="number" id="motorola"></td>
+                <td id="ttmotorola"></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center">Tổng</td>
+                <td id="tongtien"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

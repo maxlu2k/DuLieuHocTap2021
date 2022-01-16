@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       tr {
+            text-align: center;
+            font-weight: bold;
+        }
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bold;
+        }
+        table {
+            margin-left: 407px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table border='1' cellspacing='0' cellpadding='10'>
+        <tr>
+            <td><input type='checkbox' name='trN' id='check_all' value='' /></td>
+            <td>Nguyễn Thị Huệ</td>
+        </tr>
+        <tr>
+            <td><input type='checkbox' name='trN' id='check_all' value='' /></td>
+            <td>Trần Thị Loan</td>
+        </tr>
+        <tr>
+            <td><input type='checkbox' name='trN' id='check_all' value='' /></td>
+            <td>Nguyễn Mai Linh</td>
+        </tr>
+        <tr>
+            <td><input type='checkbox' name='trN' id='check_all' value='' /></td>
+            <td>Lê Thị Trà My</td>
+        </tr>
+    </table>
+    <br>
+    <input type="button" id="btn1" value="Chọn hết" />
+    <input type="button" id="btn2" value="Bỏ chọn" />
+
+</body>
+<script>
+    document.getElementById("btn1").onclick = function () {
+        var checkboxes = document.getElementsByName('trN');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+        }
+    };
+    document.getElementById("btn2").onclick = function () {
+        var checkboxes = document.getElementsByName('trN');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        }
+    };
+</script>
+
+</html>

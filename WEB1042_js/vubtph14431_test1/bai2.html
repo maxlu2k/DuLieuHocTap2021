@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            var name = document.myform.name.value;
+            var password = document.myform.password.value;
+            var repassword = document.myform.repassword.value;
+            var user = document.myform.user.value;
+            var sdt = document.myform.sdt.value;
+            var status = false;
+            if (name.length < 1) {
+                document.getElementById("ht").innerHTML = 
+                    "Vui lòng nhập tên";
+                status = false;
+            } else {
+                document.getElementById("ht").innerHTML = 
+                    "";
+                status = true;
+            }
+            var reemail= document.myform.email.value;
+           var re=new RegExp("\\w+@\\w+(\\.\\w+){1,2}","g");
+            if (!reemail.match(re)) {
+                document.getElementById("emaill").innerHTML = 
+                    "Nhập lại email";
+                status = false;
+            } else {
+                document.getElementById("emaill").innerHTML = 
+                    "";
+                status = true;
+            }
+            if(sdt.length<1){
+                document.getElementById("sdt").innerHTML = "Nhập số điện thoại"
+                status = false;
+            }else{
+                document.getElementById("sdt").innerHTML = "";
+            }
+            if(user.length<6){
+                document.getElementById("user").innerHTML = "Tối đa 6 kí tự"
+                status = false;
+            }else{
+                document.getElementById("used").innerHTML = "";
+                status = true;
+            }
+            if (password.length < 8) {
+                document.getElementById("pass").innerHTML = 
+                    "Tối đa 8 kí tự";
+                status = false;
+            } else {
+                document.getElementById("pass").innerHTML = 
+                    "";
+                    status = true;
+            }
+            if (password!=repassword || repassword.length<6) {
+                document.getElementById("repass").innerHTML = 
+                    "Mật khẩu không khớp";
+                status = false;
+            } else {
+                document.getElementById("repass").innerHTML = 
+                    "";
+                    status = true;
+            }
+            return status;
+        }
+    </script>
+</head>
+<body>
+    <h1>ĐĂNG KÍ THÀNH VIÊN</h1>
+    <form name="myform" action="#" onsubmit="return validate()">
+        <table>
+          <tr>
+            <td>Họ Và Tên:</td>
+            <td><input type="text" name="name" /> <span id="ht"></span></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email" /> <span id="emaill"></span></td>
+          </tr>
+          <tr>
+            <td>Số Điện Thoại:</td>
+            <td><input type="text" name="sdt" /> <span id="sdt"></span></td>
+          </tr>
+          <tr>
+            <td>User:</td>
+            <td><input type="text" name="user" /> <span id="user"></span></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" /> <span id="pass"></span></td>
+          </tr>
+          <tr>
+            <td>RePassword:</td>
+            <td><input type="password" name="repassword" /> <span id="repass"></span></td>
+          </tr>
+          <tr> 
+            <td>Bạn biết chúng tôi</td>
+            <td> <input type="radio" name="banbiet" onclick="bgt(false)">Bạn giới thiệu</td>
+            <td> <input type="radio" name="banbiet" onclick="fb(true)">Qua FB</td>
+        </tr>
+          <tr>
+              <td></td>
+            <td><input class="a" type="submit" value="ĐĂNG KÝ" /></td>
+          </tr>
+        </table>
+      </form>
+</body>
+</html>
